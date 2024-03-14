@@ -12,7 +12,9 @@ pub fn main() {
 
   let not_found =
     response.new(404)
-    |> response.set_body(mist.Bytes(bytes_builder.from_string(not_found_response)))
+    |> response.set_body(
+      mist.Bytes(bytes_builder.from_string(not_found_response)),
+    )
 
   let assert Ok(_) =
     fn(req: Request(Connection)) -> Response(ResponseData) {
